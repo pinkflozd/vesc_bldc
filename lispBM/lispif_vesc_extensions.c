@@ -1176,6 +1176,7 @@ static lbm_value ext_app_adc_detach(lbm_value *args, lbm_uint argn) {
 
 static lbm_value ext_app_adc_override(lbm_value *args, lbm_uint argn) {
 	LBM_CHECK_ARGN_NUMBER(2);
+	timeout_reset();
 
 	uint32_t target = lbm_dec_as_u32(args[0]);
 	float val = lbm_dec_as_float(args[1]);
